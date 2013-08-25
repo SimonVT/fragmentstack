@@ -1,0 +1,20 @@
+apply plugin: 'android'
+
+dependencies {
+  compile project(':fragmentstack')
+  compile 'net.simonvt.menudrawer:menudrawer:3.0.4@aar'
+  compile 'com.android.support:support-v4:18.0.+'
+}
+
+android {
+  compileSdkVersion 18
+  buildToolsVersion "18.0"
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 18
+
+    versionCode = 1;
+    versionName = "1.0"
+  }
+}
