@@ -125,16 +125,11 @@ public final class FragmentStack {
     dispatchOnStackChangedEvent();
   }
 
-  public int getStackSize() {
+  public int size() {
     return stack.size();
   }
 
-  @SuppressWarnings("unchecked")
-  public <T> T getFragment(String tag) {
-    return (T) fragmentManager.findFragmentByTag(tag);
-  }
-
-  public Fragment getTopFragment() {
+  public Fragment peek() {
     return stack.peekLast();
   }
 

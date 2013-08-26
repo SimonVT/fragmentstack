@@ -42,7 +42,7 @@ public class StackSample extends FragmentActivity
       @Override public void onDrawerStateChange(int oldState, int newState) {
         switch (newState) {
           case MenuDrawer.STATE_CLOSED:
-            ContentFragment f = (ContentFragment) stack.getTopFragment();
+            ContentFragment f = (ContentFragment) stack.peek();
             f.setMenuVisibility(true);
 
             if (!stack.commit()) {
@@ -51,7 +51,7 @@ public class StackSample extends FragmentActivity
             break;
 
           default:
-            stack.getTopFragment().setMenuVisibility(false);
+            stack.peek().setMenuVisibility(false);
             getActionBar().setTitle(R.string.app_name);
             break;
         }
